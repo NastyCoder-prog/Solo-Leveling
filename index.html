@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Solo Leveling Workout Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Solo Leveling Workout Tracker</h1>
+        <div class="stats">
+            <div>Level: <span id="level">1</span></div>
+            <div>Strength: <span id="strength">10</span></div>
+            <div>Agility: <span id="agility">10</span></div>
+            <div>Stamina: <span id="stamina">10</span></div>
+            <div>Intelligence: <span id="intelligence">10</span></div>
+            <div>Points: <span id="points">0</span></div>
+        </div>
+        <div class="actions">
+            <button onclick="completeWorkout()">Complete Workout</button>
+            <button onclick="increaseStat('strength')">+ Strength</button>
+            <button onclick="increaseStat('agility')">+ Agility</button>
+            <button onclick="increaseStat('stamina')">+ Stamina</button>
+            <button onclick="increaseStat('intelligence')">+ Intelligence</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
