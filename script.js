@@ -1,4 +1,4 @@
-// Initialize skills data
+// Initialize skills datah
 let skills = JSON.parse(localStorage.getItem('skills')) || {
     workout: { strength: { level: 1, xp: 0 }, speed: { level: 1, xp: 0 }, stamina: { level: 1, xp: 0 } },
     study: { knowledge: { level: 1, xp: 0 }, logic: { level: 1, xp: 0 }, creativity: { level: 1, xp: 0 } },
