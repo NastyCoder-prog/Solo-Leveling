@@ -2,29 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Solo Leveling Workout Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Leveling Workout Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
-        <h1>Solo Leveling Workout Tracker</h1>
-        <div class="stats">
-            <div>Level: <span id="level">1</span></div>
-            <div>Strength: <span id="strength">10</span></div>
-            <div>Agility: <span id="agility">10</span></div>
-            <div>Stamina: <span id="stamina">10</span></div>
-            <div>Intelligence: <span id="intelligence">10</span></div>
-            <div>Points: <span id="points">0</span></div>
-        </div>
-        <div class="actions">
-            <button onclick="completeWorkout()">Complete Workout</button>
-            <button onclick="increaseStat('strength')">+ Strength</button>
-            <button onclick="increaseStat('agility')">+ Agility</button>
-            <button onclick="increaseStat('stamina')">+ Stamina</button>
-            <button onclick="increaseStat('intelligence')">+ Intelligence</button>
+    <h1>Solo Leveling Tracker</h1>
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab('workout')">Workout</button>
+        <button class="tab-button" onclick="openTab('study')">Study</button>
+        <button class="tab-button" onclick="openTab('coding')">Coding</button>
+    </div>
+
+    <div id="workout" class="tab-content active">
+        <h2>Workout Session</h2>
+        <form id="workout-form">
+            <label for="workout-skill">Assign XP to Skill:</label>
+            <select id="workout-skill">
+                <option value="strength">Strength</option>
+                <option value="speed">Speed</option>
+                <option value="stamina">Stamina</option>
+            </select>
+            <label for="workout-xp">XP Earned:</label>
+            <input type="number" id="workout-xp" min="1" value="10">
+            <button type="submit">Log Workout</button>
+        </form>
+        <div id="workout-skills"></div>
+    </div>
+
+    <div id="study" class="tab-content">
+        <h2>Study Session</h2>
+        <form id="study-form">
+            <label for="study-skill">Assign XP to Skill:</label>
+            <select id="study-skill">
+                <option value="knowledge">Knowledge</option>
+                <option value="logic">Logic</option>
+                <option value="creativity">Creativity</option>
+            </select>
+            <label for="study-xp">XP Earned:</label>
+            <input type="number" id="study-xp" min="1" value="10">
+            <button type="submit">Log Study</button>
+        </form>
+        <div id="study-skills"></div>
+    </div>
+
+    <div id="coding" class="tab-content">
+        <h2>Coding Session</h2>
+        <form id="coding-form">
+            <label for="coding-skill">Assign XP to Skill:</label>
+            <select id="coding-skill">
+                <option value="algorithms">Algorithms</option>
+                <option value="debugging">Debugging</option>
+                <option value="innovation">Innovation</option>
+            </select>
+            <label for="coding-xp">XP Earned:</label>
+            <input type="number" id="coding-xp" min="1" value="10">
+            <button type="submit">Log Coding</button>
+        </form>
+        <div id="coding-skills"></div>
+    </div>
+
+    <div id="level-up-modal" class="modal">
+        <div class="modal-content">
+            <h2>LEVEL UP!</h2>
+            <p id="level-up-message"></p>
+            <button onclick="closeModal()">Awesome!</button>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
